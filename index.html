@@ -30,6 +30,8 @@
     <link href="css/fontawesome-all.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
+    <script type="text/javascript" src="proceeding_db.js?rnd=234"></script>
+
     <!-- Favicon  -->
     <link rel="icon" href="images/favicon.png">
 </head>
@@ -569,6 +571,68 @@
             e.preventDefault()
             $(this).tab('show')
         })
+    </script>
+
+    <script type="text/javascript">
+        /*
+        <div class="row">
+            <div class="col-md-1 col-12" style="">
+                <h5>01</h5>
+            </div>
+            <div class="col-md-2 col-10">
+                <p><span style="font-weight:bold">Haozhou Wang,Tang Li,Erika Nishida,Yuya Fukano,Yoichiro Kato,Wei Guo</span></p>
+            </div>
+            <div class="col-md-3">
+                <p>Graduate School of Agricultural and Life Sciences, The University of Tokyo;Graduate School of Agricultural and Life Sciences, The University of Tokyo</p>
+            </div>
+            <div class="col-md-6">
+                <p><a href="#">Cost-efficient broccoli head phenotyping using aerial imagery and SfM-based weakly supervised learning</a></p>
+            </div>
+        </div>
+        */
+        var abs_html = '';
+
+        for (abs_var in abs) {
+            number = ('0' + (Number(abs_var)+1)).slice(-2)
+            abs_html = abs_html + 
+            '<div class="row">' +
+                '<div class="col-md-1 col-12">' + 
+                    '<h5>' + number + '</h5>' +
+                '</div>' + 
+                '<div class="col-md-4">' + 
+                    '<p><a href="files/' + abs[abs_var]['file'] + '">' + abs[abs_var]['title'] + '</a></p>' + 
+                '</div>' +
+                '<div class="col-md-2 col-10">' +
+                    '<p><span style="font-weight:bold">' + abs[abs_var]['authors'] + '</span></p>' + 
+                '</div>' + 
+                '<div class="col-md-5">' + 
+                    '<p>' + abs[abs_var]['institudes'] + '</p>' +
+                '</div>' +
+            '</div>'
+        };
+
+        var pos_html = '';
+        for (pos_var in pos) {
+            number = ('0' + (Number(pos_var)+1)).slice(-2)
+            pos_html = pos_html + 
+            '<div class="row">' +
+                '<div class="col-md-1 col-12">' + 
+                    '<h5>' + number + '</h5>' +
+                '</div>' + 
+                '<div class="col-md-4">' + 
+                    '<p><a href="files/' + pos[pos_var]['file'] + '">' + pos[pos_var]['title'] + '</a></p>' + 
+                '</div>' +
+                '<div class="col-md-2 col-10">' +
+                    '<p><span style="font-weight:bold">' + pos[pos_var]['authors'] + '</span></p>' + 
+                '</div>' + 
+                '<div class="col-md-5">' + 
+                    '<p>' + pos[pos_var]['institudes'] + '</p>' +
+                '</div>' +
+            '</div>'
+        };
+
+        $('#abstract').html(abs_html);
+        $('#poster').html(pos_html);
     </script>
 </body>
 
