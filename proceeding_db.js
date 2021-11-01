@@ -154,7 +154,7 @@ var day12 = [
      "time_ed": "",
      "number": "D2L4",
      "title": "Domain adaptation for semantic segmentation of field-grown maize plants",
-     "authors": "KOUSHIK NAGASUBRAMANIAN (Iowa State University)*; Baskar Ganapathysubramanian (Iowa State University)"},
+     "authors": "Koushik Nagasubramanian (Iowa State University); Zaki Jubery (Iowa State University); Yawei Li (Iowa State University); Soumik Sarkar (Iowa State University); Dan Nettleton (Iowa State University); Yumou Qiu (Iowa State University); James Schnable  (University of Nebraska-Lincoln); Patrick S. Schnable (Iowa State University) ; Baskar Ganapathysubramanian (Iowa State University)*"},
 
      {"time_st": "2021-11-03T09:45:00+09:00",
      "time_ed": "2021-11-03T10:05:00+09:00",
@@ -208,7 +208,7 @@ var day12 = [
      "time_ed": "",
      "number": "D2F8",
      "title": "Distributed deep learning for persistent monitoring of agricultural fields",
-     "authors": "KOUSHIK NAGASUBRAMANIAN (Iowa State University)*; Yasaman Esfandiari (Iowa State University); Fateme Fotouhi (Iowa State University); Baskar Ganapathysubramanian (Iowa State University); Soumik Sarkar (Iowa State University)"},
+     "authors": "Yasaman Esfandiari (Iowa State University); Koushik Nagasubramanian (Iowa State University); Fateme Fotouhi (Iowa State University); Patrick S. Schnable (Iowa State University); Baskar Ganapathysubramanian (Iowa State University); Soumik Sarkar (Iowa State University)*"},
 
      {"time_st": "",
      "time_ed": "",
