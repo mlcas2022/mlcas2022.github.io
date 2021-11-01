@@ -450,6 +450,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h2 class="h2-heading text-center">Proceedings</h2>
+                    <h6 class="text-center text-muted">Time zone: <span id="proceed_tz"></span></h6>
                 </div> <!-- end of col -->
             </div> <!-- end of row -->
 
@@ -459,16 +460,19 @@
                         <div class="card-header">
                         <ul class="nav nav-tabs card-header-tabs" id="bologna-list" role="tablist">
                             <li class="nav-item">
-                            <a class="nav-link active" href="#abstract" role="tab" aria-controls="description" aria-selected="true">Abstract</a>
+                                <a class="nav-link active" href="#day11" role="tab" aria-controls="description" aria-selected="true" style="text-decoration: none">Day 1-1</a>
                             </li>
                             <li class="nav-item">
-                            <a class="nav-link"  href="#poster" role="tab" aria-controls="history" aria-selected="false">Poster</a>
+                                <a class="nav-link" href="#day12" role="tab" aria-controls="history" aria-selected="false" style="text-decoration: none">Day 1-2</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#day21" role="tab" aria-controls="history" aria-selected="false" style="text-decoration: none">Day 2-1</a>
                             </li>
                         </ul>
                         </div>
                         <div class="card-body">
                             <div class="tab-content mt-3">
-                                <div class="tab-pane active" id="abstract" role="tabpanel">
+                                <div class="tab-pane active" id="day11" role="tabpanel">
                                     <!-- copy row to duplicate-->
                                     <div class="row">
                                         <div class="col-md-1 col-12">
@@ -487,7 +491,26 @@
                                     <!-- copy row to duplicate-->
                                 </div>
                                 
-                                <div class="tab-pane" id="poster" role="tabpanel" aria-labelledby="history-tab">  
+                                <div class="tab-pane" id="day12" role="tabpanel" aria-labelledby="history-tab">  
+                                    <!-- copy row to duplicate-->
+                                    <div class="row">
+                                        <div class="col-md-1 col-12">
+                                          <h5>01</h5>
+                                        </div>
+                                        <div class="col-md-2 col-10">
+                                          <p><span style="font-weight:bold">Haozhou Wang,Tang Li,Erika Nishida,Yuya Fukano,Yoichiro Kato,Wei Guo</span></p>
+                                        </div>
+                                        <div class="col-md-3">
+                                          <p>Graduate School of Agricultural and Life Sciences, The University of Tokyo;Graduate School of Agricultural and Life Sciences, The University of Tokyo;Graduate School of Agricultural and Life Sciences, The University of Tokyo;Graduate School of Agricultural and Life Sciences, The University of Tokyo;Graduate School of Agricultural and Life Sciences, The University of Tokyo;Graduate School of Agricultural and Life Sciences, The University of Tokyo</p>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <p><a href="#">Cost-efficient broccoli head phenotyping using aerial imagery and SfM-based weakly supervised learning</a></p>
+                                        </div>
+                                    </div>
+                                    <!-- copy row to duplicate-->
+                                </div>
+
+                                <div class="tab-pane" id="day21" role="tabpanel" aria-labelledby="history-tab">  
                                     <!-- copy row to duplicate-->
                                     <div class="row">
                                         <div class="col-md-1 col-12">
@@ -658,49 +681,69 @@
             </div>
         </div>
         */
-        var abs_html = '';
-
-        for (abs_var in abs) {
-            number = ('0' + (Number(abs_var)+1)).slice(-2)
-            abs_html = abs_html + 
-            '<div class="row">' +
-                '<div class="col-md-1 col-12">' + 
-                    '<h5>' + number + '</h5>' +
+        var day11_html = '';
+        for (day_var in day11) {
+            time_str = '<i>' + day11[day_var]['number'] + '</i>';
+            if (day11[day_var]['time_st'] !== "") {
+                time_str = moment.utc(day11[day_var]['time_st']).local().format('HH:mm') + '-' + moment.utc(day11[day_var]['time_ed']).local().format('HH:mm')
+            };
+            day11_html = day11_html + 
+            '<div class="row border-bottom">' +
+                '<div class="col-md-2">' + 
+                    '<p class="m-2 text-center">' + time_str + '</p>' +
                 '</div>' + 
-                '<div class="col-md-4">' + 
-                    '<p><a href="files/' + abs[abs_var]['file'] + '">' + abs[abs_var]['title'] + '</a></p>' + 
-                '</div>' +
-                '<div class="col-md-2 col-10">' +
-                    '<p><span style="font-weight:bold">' + abs[abs_var]['authors'] + '</span></p>' + 
+                '<div class="col-md-4 col-10">' +
+                    '<p class="m-2"><span style="font-weight:bold">' + day11[day_var]['title'] + '</span></p>' + 
                 '</div>' + 
-                '<div class="col-md-5">' + 
-                    '<p>' + abs[abs_var]['institudes'] + '</p>' +
-                '</div>' +
-            '</div>'
-        };
-
-        var pos_html = '';
-        for (pos_var in pos) {
-            number = ('0' + (Number(pos_var)+1)).slice(-2)
-            pos_html = pos_html + 
-            '<div class="row">' +
-                '<div class="col-md-1 col-12">' + 
-                    '<h5>' + number + '</h5>' +
-                '</div>' + 
-                '<div class="col-md-4">' + 
-                    '<p><a href="files/' + pos[pos_var]['file'] + '">' + pos[pos_var]['title'] + '</a></p>' + 
-                '</div>' +
-                '<div class="col-md-2 col-10">' +
-                    '<p><span style="font-weight:bold">' + pos[pos_var]['authors'] + '</span></p>' + 
-                '</div>' + 
-                '<div class="col-md-5">' + 
-                    '<p>' + pos[pos_var]['institudes'] + '</p>' +
+                '<div class="col-md-6">' + 
+                    '<p class="m-2">' + day11[day_var]['authors'] + '</p>' +
                 '</div>' +
             '</div>'
         };
 
-        $('#abstract').html(abs_html);
-        $('#poster').html(pos_html);
+        var day12_html = '';
+        for (day_var in day12) {
+            time_str = '<i>' + day12[day_var]['number'] + '</i>';
+            if (day12[day_var]['time_st'] !== "") {
+                time_str = moment.utc(day12[day_var]['time_st']).local().format('HH:mm') + '-' + moment.utc(day12[day_var]['time_ed']).local().format('HH:mm')
+            };
+            day12_html = day12_html + 
+            '<div class="row border-bottom">' +
+                '<div class="col-md-2">' + 
+                    '<p class="m-2 text-center">' + time_str + '</p>' +
+                '</div>' + 
+                '<div class="col-md-4 col-10">' +
+                    '<p class="m-2"><span style="font-weight:bold">' + day12[day_var]['title'] + '</span></p>' + 
+                '</div>' + 
+                '<div class="col-md-6">' + 
+                    '<p class="m-2">' + day12[day_var]['authors'] + '</p>' +
+                '</div>' +
+            '</div>'
+        };
+
+        var day21_html = '';
+        for (day_var in day21) {
+            time_str = '<i>' + day21[day_var]['number'] + '</i>';
+            if (day21[day_var]['time_st'] !== "") {
+                time_str = moment.utc(day21[day_var]['time_st']).local().format('HH:mm') + '-' + moment.utc(day21[day_var]['time_ed']).local().format('HH:mm')
+            };
+            day21_html = day21_html + 
+            '<div class="row border-bottom">' +
+                '<div class="col-md-2">' + 
+                    '<p class="m-2 text-center">' + time_str + '</p>' +
+                '</div>' + 
+                '<div class="col-md-4 col-10">' +
+                    '<p class="m-2"><span style="font-weight:bold">' + day21[day_var]['title'] + '</span></p>' + 
+                '</div>' + 
+                '<div class="col-md-6">' + 
+                    '<p class="m-2">' + day21[day_var]['authors'] + '</p>' +
+                '</div>' +
+            '</div>'
+        };
+
+        $('#day11').html(day11_html);
+        $('#day12').html(day12_html);
+        $('#day21').html(day21_html);
     </script>
 
     <script>
@@ -713,32 +756,34 @@
         $('#tz21').html(current_tz)
         $('#tz22').html(current_tz)
 
+        $("#proceed_tz").html(current_tz)
+
         //title="JST (UTC +9)  Tue, 2 Nov 2021 21:00 ~ JST (UTC +9)  Thu, 4 Nov 2021 23:00"
-        var st_time = moment.utc('2021-11-02T21:00:00+09:00').local().format('llll');
-        var ed_time = moment.utc('2021-11-04T23:00:00+09:00').local().format('llll');
+        var st_time = moment.utc('2021-11-02T21:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_time = moment.utc('2021-11-04T23:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
         $('#st_time').html(st_time)
         $('#ed_time').html(ed_time)
 
         //title="JST (UTC +9)  Tue, 2 Nov 2021 21:00 ~ 23:00"
-        var st_day11 = moment.utc('2021-11-02T21:00:00+09:00').local().format('llll');
-        var ed_day11 = moment.utc('2021-11-02T23:00:00+09:00').local().format('LT');
+        var st_day11 = moment.utc('2021-11-02T21:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_day11 = moment.utc('2021-11-02T23:00:00+09:00').local().format('HH:mm');
         $('#st_day11').html(st_day11)
         $('#ed_day11').html(ed_day11)
 
         //JST (UTC +9)  Wed, 3 Nov 2021 08:00 ~ 10:00
-        var st_day12 = moment.utc('2021-11-03T08:00:00+09:00').local().format('llll');
-        var ed_day12 = moment.utc('2021-11-03T10:00:00+09:00').local().format('LT');
+        var st_day12 = moment.utc('2021-11-03T08:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_day12 = moment.utc('2021-11-03T10:00:00+09:00').local().format('HH:mm');
         $('#st_day12').html(st_day12)
         $('#ed_day12').html(ed_day12)
 
         //JST (UTC +9)  Wed, 3 Nov 2021 21:00 ~ 23:00
-        var st_day21 = moment.utc('2021-11-03T21:00:00+09:00').local().format('llll');
-        var ed_day21 = moment.utc('2021-11-03T23:00:00+09:00').local().format('LT');
+        var st_day21 = moment.utc('2021-11-03T21:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_day21 = moment.utc('2021-11-03T23:00:00+09:00').local().format('HH:mm');
         $('#st_day21').html(st_day21)
         $('#ed_day21').html(ed_day21)
 
         //JST (UTC +9)  Wed, 3 Nov 2021 23:00 ~
-        var st_day22 = moment.utc('2021-11-03T23:00:00+09:00').local().format('llll');
+        var st_day22 = moment.utc('2021-11-03T23:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
         $('#st_day22').html(st_day22)
 
         // $('.popover-dismiss').popover({
