@@ -159,7 +159,7 @@ var day12 = [
      {"time_st": "2021-11-03T09:45:00+09:00",
      "time_ed": "2021-11-03T10:05:00+09:00",
      "number": "",
-     "title": "Long Talks",
+     "title": "Flash Talks",
      "authors": ""},
 
      {"time_st": "",
