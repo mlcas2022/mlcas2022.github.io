@@ -487,6 +487,11 @@
     </div>
 
 
+
+    
+    
+    
+    
 <div class="ex-basic-1 pt-5 pb-5">
         <div id="program" class="container">
             <div class="row">
@@ -509,7 +514,7 @@
                                     </th>
                                     <th class="border">
                                         <h3 class="text-center"><span style="font-weight:bold">Day 1-2</span></h3>
-                                        <div title="Absolute Reference: CDT(UTC -5) Mon, 10 Oct 12:00 ~ 20:00"> <span class="text-primary" id="tz12">America/Chicago</span> <span id="st_day12">Mon, 10 Oct 12:00</span> ~ <span id="ed_day12">20:00</span></div>
+                                        <div title="Absolute Reference: CDT(UTC -5) Mon, 10 Oct 2022 12:00 ~ 20:00"> <span class="text-primary" id="tz12">America/Chicago</span> <span id="st_day12">Mon, 10 Oct 2022 12:00</span> ~ <span id="ed_day12">20:00</span></div>
                                     </th>
                                     <th class="border">
                                         <h3 class="text-center"><span style="font-weight:bold">Day 2</span></h3>
@@ -523,14 +528,12 @@
                             </thead>
                             <tbody>
                                 <!--tr>
-                                    <td>JST(UTC +9)  Tue, 2 Nov 21:00 ~ 23:00<br />
-                                        CDT(UTC -5)  Tue, 2 Nov 07:00 ~ 09:00</td>
-                                    <td>JST(UTC +9)  Wed, 3 Nov 08:00 ~ 10:00<br />
-                                        CDT(UTC -5)  Tue, 2 Nov 18:00 ~ 20:00</td>
-                                    <td>JST (UTC +9)  Wed, 3 Nov 2021 21:00 ~ 23:00<br />
-                                        CDT(UTC -5)   Wed, 3 Nov 2021 07:00 ~ 09:00</td>
-                                    <td>JST (UTC +9)  Wed, 3 Nov 2021 23:00 ~<br />
-                                        CDT(UTC -5)   Wed, 3 Nov 2021 09:00 ~</td>
+                                    <td>JST(UTC +9)  Mon, 10 Oct 22:00 ~ 02:00<br />
+                                        CDT(UTC -5)  Mon, 10 Oct 02:00 ~ 10:00</td>
+                                    <td>JST(UTC +9)  Mon, 10 Oct 08:00 ~ 12:00<br />
+                                        CDT(UTC -5)  Mon, 10 Oct 12:00 ~ 20:00</td>
+                                    <td>JST (UTC +9)  Tue, 11 Oct 2022 22:00 ~ 02:00<br />
+                                        CDT(UTC -5)   Tue, 11 Oct 2022 08:00 ~ 12:00</td>
                                 </tr-->
                                 <tr>
                                     <td class="pt-3" width="25%">Breakfast/Welcome address</td>
@@ -577,6 +580,7 @@
             </div> <!-- end of row -->
         </div> <!-- end of container -->
     </div>
+    
     
     
     
@@ -936,29 +940,29 @@
         $('#tz21').html(current_tz)
         $('#tz22').html(current_tz)
         $("#proceed_tz").html(current_tz)
-        //title="JST (UTC +9)  Tue, 2 Nov 2021 21:00 ~ JST (UTC +9)  Thu, 4 Nov 2021 23:00"
-        var st_time = moment.utc('2021-11-02T21:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
-        var ed_time = moment.utc('2021-11-04T23:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
+        //title="CDT (UTC -5)  Mon, 10 Oct 2022 08:00 ~ CDT (UTC -5)  Tue, 11 Oct 2022 12:00"
+        var st_time = moment.utc('2022-10-10T08:00:00-05:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_time = moment.utc('2022-10-11T12:00:00-05:00').local().format('ddd, D MMM, YYYY HH:mm');
         $('#st_time').html(st_time)
         $('#ed_time').html(ed_time)
-        //title="JST (UTC +9)  Tue, 2 Nov 2021 21:00 ~ 23:00"
-        var st_day11 = moment.utc('2021-11-02T21:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
-        var ed_day11 = moment.utc('2021-11-02T23:00:00+09:00').local().format('HH:mm');
+        //title="CDT (UTC -5)  Mon, 10 Oct 2022 08:00 ~ 12:00"
+        var st_day11 = moment.utc('2022-10-10T08:00:00-05:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_day11 = moment.utc('2022-10-10T12:00:00-05:00').local().format('HH:mm');
         $('#st_day11').html(st_day11)
         $('#ed_day11').html(ed_day11)
-        //JST (UTC +9)  Wed, 3 Nov 2021 08:00 ~ 10:00
-        var st_day12 = moment.utc('2021-11-03T08:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
-        var ed_day12 = moment.utc('2021-11-03T10:00:00+09:00').local().format('HH:mm');
+        //CDT (UTC -5)  Mon, 10 Oct 2022 12:00 ~ 20:00
+        var st_day12 = moment.utc('2022-10-10T12:00:00-05:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_day12 = moment.utc('2022-10-10T20:00:00-05:00').local().format('HH:mm');
         $('#st_day12').html(st_day12)
         $('#ed_day12').html(ed_day12)
-        //JST (UTC +9)  Wed, 3 Nov 2021 21:00 ~ 23:00
-        var st_day21 = moment.utc('2021-11-03T21:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
-        var ed_day21 = moment.utc('2021-11-03T23:00:00+09:00').local().format('HH:mm');
+        //CDT (UTC -5)  Tue, 11 Oct 2022 08:00 ~ 12:00
+        var st_day21 = moment.utc('2022-10-11T08:00:00-05:00').local().format('ddd, D MMM, YYYY HH:mm');
+        var ed_day21 = moment.utc('2021-10-11T12:00:00-05:00').local().format('HH:mm');
         $('#st_day21').html(st_day21)
         $('#ed_day21').html(ed_day21)
-        //JST (UTC +9)  Wed, 3 Nov 2021 23:00 ~
-        var st_day22 = moment.utc('2021-11-03T23:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
-        $('#st_day22').html(st_day22)
+//         //JST (UTC +9)  Wed, 3 Nov 2021 23:00 ~
+//         var st_day22 = moment.utc('2021-11-03T23:00:00+09:00').local().format('ddd, D MMM, YYYY HH:mm');
+//         $('#st_day22').html(st_day22)
         // $('.popover-dismiss').popover({
         //    trigger: 'focus'
         // })
