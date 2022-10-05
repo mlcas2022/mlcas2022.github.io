@@ -38,6 +38,15 @@ var day11 = [
      "title": "Multi-Modal Aerial Mapping for Deep Learning-Based Phenotyping",
      "authors": "Winnie Kuang (Carnegie Mellon University Robotics Institute)*; David Russell (Carnegie Mellon University); Francisco J Yandun (Carnegie Mellon University)"},
     
+
+    {"time_st": "2022-10-10T010:00:00-05:00",
+     "time_ed": "2022-10-10T010:15:00-05:00",
+     "number": "",
+     "title": "Break",
+     "authors": ""
+    },
+
+    
     {"time_st": "2022-10-10T010:15:00-05:00",
      "time_ed": "2022-10-10T011:00:00-05:00",
      "number": "",
@@ -147,7 +156,7 @@ var day21 = [
      "authors": "Prof. Koshizuka NOBORU"},
 
      {"time_st": "2022-10-11T09:00:00-05:00",
-     "time_ed": "2022-10-11T10:30:00-05:00",
+     "time_ed": "2022-10-11T10:00:00-05:00",
      "number": "",
      "title": "Contributed Talks + Competition Winners",
      "authors": ""},
@@ -183,4 +192,34 @@ var day21 = [
      "number": "",
      "title": "Competition Talk 3",
      "authors": "Zahra Khalilzadeh"},
+    
+    {"time_st": "2022-10-10T010:00:00-05:00",
+     "time_ed": "2022-10-10T010:15:00-05:00",
+     "number": "",
+     "title": "Break",
+     "authors": ""
+    },
+    
+     {"time_st": "2022-10-10T010:15:00-05:00",
+     "time_ed": "2022-10-10T011:00:00-05:00",
+     "number": "",
+     "title": "Keynote 2: AI enabled sequential decision making",
+     "authors": "Prof. Aarti Singh"
+    },
+    
+     {"time_st": "2022-10-10T011:00:00-05:00",
+     "time_ed": "2022-10-10T011:45:00-05:00",
+     "number": "",
+     "title": "Start-up roundtable",
+     "authors": ""
+    },
+        
+     {"time_st": "2022-10-10T011:45:00-05:00",
+     "time_ed": "2022-10-10T012:00:00-05:00",
+     "number": "",
+     "title": "Concluding Remarks",
+     "authors": ""
+    },
+
+    
 ]
