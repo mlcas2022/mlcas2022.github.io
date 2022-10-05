@@ -204,7 +204,7 @@ var day21 = [
      "time_ed": "2022-10-10T011:00:00-05:00",
      "number": "",
      "title": "Keynote 2: AI enabled sequential decision making",
-     "authors": "Prof. Aarti Singh"
+     "authors": "Prof. Aarti Singh,  Chair: Soumik Sarkar"
     },
     
      {"time_st": "2022-10-10T011:00:00-05:00",
